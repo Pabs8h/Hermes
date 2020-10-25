@@ -1,4 +1,4 @@
-#Hermes
+# Hermes
 > Information is the oil of the 21st century, and analytics is the combustion engine. Peter Sondergaard, senior vice president, Gartner Research.
 
 ## Descripción
@@ -15,7 +15,7 @@ Hermes es una herramienta que ayuda a la rama judicial en su manejo, analisís y
 
 <span>
 <span>
-<img src="https://cdn.worldvectorlogo.com/logos/heroku.svg " width=100px>  <img src='https://static.djangoproject.com/img/logos/django-logo-negative.png' width=150px>
+<img src="https://cdn.worldvectorlogo.com/logos/heroku.svg" width=100px>  <img src='https://static.djangoproject.com/img/logos/django-logo-negative.png' width=150px>
 
 
 

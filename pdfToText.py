@@ -14,17 +14,6 @@ for img in PDFfile.sequence:
     print(ImageSequence)
     ImageSequence += 1
 
-# for page in pages:
-#
-#     filename = "page_" + str(image_counter) + ".jpg"
-#
-#     # Save the image of the page in system
-#     page.save("pdfTest/"+filename, 'JPEG')
-#
-#     # Increment the counter to update filename
-#     image_counter = image_counter + 1
-
-
 filelimit = ImageSequence-1
 
 outfile = "out_text.txt"
@@ -39,6 +28,5 @@ for i in range(1, filelimit + 1):
     text = text.replace('-\n', '')
     print(i)
     f.write(text)
-    f.write("-----------------------------------------------------------------------------------")
 
 f.close()

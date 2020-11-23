@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Registrarse</h1>
+<br/>
+
+<div class="form-group">
+    <form method="POST">
+        {% csrf_token %}
+<!--        <div class="row">-->
+<!--            <div class="col-2">-->
+<!--                usuario:-->
+<!--            </div>-->
+<!--            <div class="col-6">-->
+<!--                {{form.username}}-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="row mt-2">-->
+<!--            <div class="col-2">-->
+<!--                constraseña:-->
+<!--            </div>-->
+<!--            <div class="col-6">-->
+<!--                {{form.password1}}-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="row mt-2">-->
+<!--            <div class="col-2">-->
+<!--                confirme su constraseña:-->
+<!--            </div>-->
+<!--            <div class="col-6">-->
+<!--                {{form.password2}}-->
+<!--            </div>-->
+<!--        </div>-->
+        {{form.as_p}}
+        <br>
+        <button class="btn btn-primary">confirmar</button>
+    </form>
+</div>
+{% endblock %}

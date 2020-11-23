@@ -1,4 +1,7 @@
-
+pdfToText.py
+out_text.txt
+pdfTest/
+analisis/data/
 # Created by https://www.toptal.com/developers/gitignore/api/python,django,virtualenv,pycharm
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,django,virtualenv,pycharm
 

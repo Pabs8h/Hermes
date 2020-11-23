@@ -1,13 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
-
-    <div style=" display: flex; align-items: center; justify-content: center;" class="login-box auth0-box before">
-            <img style="width:80%; " src="/static/media/HermesLogo.jpeg" />
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <div style="display: flex; align-items: center; justify-content: center;" class="login-box auth0-box before">
+            <img style="width:100%; " src="/static/media/Hermes.svg"/>
     </div>
+    <br>
+    {% if user.is_authenticated %}
     <div>
-        <div class="row">
+        <div class="row mt-10">
             <div class="col" align="right">
-                <a href="/analisis/creacion/" class="btn btn-info" role="button">Procesar archivo</a>
+                <a href="/analisis/creacion/" class="btn btn-info" role="button" style="background-color:#daa245 !important;">Procesar archivo</a>
 <!--                <button type="button" class="btn btn-primary">Procesar archivo</button>-->
             </div>
             <div class="col">
@@ -15,5 +17,12 @@
             </div>
         </div>
     </div>
-
+    {% else %}
+    <div>
+        <div class="row justify-content-md-center">
+            <h2 style="color:#daa245">La mejor herramienta para la gestion de documentos de la rama judicial</h2>
+            <p style="color:#daa245">Inicia sesion para obtener toda la funcionalidad</p>
+        </div>
+    </div>
+    {% endif %}
 {% endblock %}

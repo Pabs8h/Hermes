@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1 style="color:white">Iniciar sesion</h1>
+<br/>
+
+<div class="form-group" style="color:white">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-1">
+                usuario:
+            </div>
+            <div class="col-6">
+                {{form.username}}
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-1">
+                constraseña:
+            </div>
+            <div class="col-6">
+                {{form.password}}
+            </div>
+        </div>
+        <br>
+        <button class="btn btn-primary">confirmar</button>
+    </form>
+</div>
+{% endblock %}

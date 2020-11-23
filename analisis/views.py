@@ -52,18 +52,18 @@ def analizar(request):
     natural_language_understanding = NaturalLanguageUnderstandingV1(
     version='2020-08-01',
     authenticator=autenticador)
-    f=open(os.path.join(BASE_DIR,'analisis\data\info2.txt'),'r', encoding='utf-8')
+    f=open(os.path.join(BASE_DIR,'analisis\data\info.txt'),'r', encoding='utf-8')
     contenido= f.read()
-    #print(contenido)
+    print(contenido)
     f.close()
     natural_language_understanding.set_service_url('https://api.us-south.natural-language-understanding.watson.cloud.ibm.com/instances/17bf7417-a159-4992-8526-751d92eb4f9c')
     response = natural_language_understanding.analyze(
-    text=contenido,
-    features=Features(categories=CategoriesOptions(limit=3),concepts=ConceptsOptions(limit=3),entities=EntitiesOptions(limit=5),keywords=KeywordsOptions(sentiment=True,emotion=True,limit=2))).get_result()
+        text=contenido,
+        features=Features(categories=CategoriesOptions(limit=10),concepts=ConceptsOptions(limit=10),entities=EntitiesOptions(limit=10),keywords=KeywordsOptions(sentiment=True,emotion=True,limit=10))).get_result()
     #resp = json.dumps()
-    print(response)
+    # print(response)
     resp2 = dictresponse(response)
-    return render(request,"analisis/analizar.html",resp2)#context)#HttpResponse(json.dumps(response, indent=2))
+    return render(request,"analisis/analizar.html",resp2)
 
 def dictresponse(resp):
     finResp = {
@@ -82,5 +82,5 @@ def dictresponse(resp):
     for keyw in resp["keywords"]:
         finResp["Keywords"].append(keyw["text"])
 
-    print(finResp)
+    # print(finResp)
     return finResp

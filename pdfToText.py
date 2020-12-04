@@ -4,7 +4,7 @@ from wand.image import Image as wi
 
 pytesseract.pytesseract.tesseract_cmd = "C:\\Program Files (x86)\\Tesseract-OCR\\tesseract.exe"
 
-PDFfile = wi(filename="pdfTest/tutelaTest.pdf",resolution=300)
+PDFfile = wi(filename="pdfTest/anadec.pdf",resolution=300)
 Images = PDFfile.convert('jpg')
 ImageSequence = 1
 
@@ -16,7 +16,7 @@ for img in PDFfile.sequence:
 
 filelimit = ImageSequence-1
 
-outfile = "out_text.txt"
+outfile = "text_anadec.txt"
 
 f = open(outfile, "a", encoding='utf-8')
 
@@ -24,7 +24,7 @@ f = open(outfile, "a", encoding='utf-8')
 for i in range(1, filelimit + 1):
     filename = "image" + str(i) + ".jpg"
 
-    text = str(((pytesseract.image_to_string(PIL.Image.open(filename)))))
+    text = str((pytesseract.image_to_string(PIL.Image.open(filename))))
     text = text.replace('-\n', '')
     print(i)
     f.write(text)

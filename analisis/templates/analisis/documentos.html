@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load filtroID %}
+    <div>
+        <table class="table table-hover">
+            <thead>
+                <tr style="color:#0E2EB0">
+                    <th style="color:#daa245">Documentos analizados</th>
+                    <th style="color:#daa245">Ultima fecha de analisis</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% if results != "" %}
+                {% for res in results%}
+                <tr>
+                    <td style="color:white"><a href="/analisis/documentos/{{res|private:'_id'}}" style="color: inherit;">{{ res.nombre }} </a></td>
+                    <td style="color:white">{{ res.fecha }}</td>
+                </tr>
+                {% endfor %}
+            {% else %}
+            <tr>
+                <td style="color:white">Aun no se han analizado documentos</td>
+            </tr>
+            {% endif %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
